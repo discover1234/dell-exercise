@@ -1,0 +1,54 @@
+8. Exercise 3:
+https://www.dell.com/en-us/shop/accessories
+From the above URL,
+1. Replace all the images of the Networking products with the Cameras, Photo
+& Video ones.
+2. Change the background color of the Networking hero image to Purple.
+3. Create a self-invoking function that calculates the sum of all products listed
+on the Power, Batteries & Adapters section and triggers an alert with the
+result.
+Bonus
+3.Find the Slider and make the slider's auto play feature stops (only if it has at
+least 2 slides)
+ 
+Solution:
+
+1. $('img[src^="//snpi.dell.com/snp/images2/110/"]').each(function(){
+
+$(this).attr('src',$(this).attr('src').replace('a8742728','a8910375'));
+$(this).attr('src',$(this).attr('src').replace('ab016736','a9552314'));
+$(this).attr('src',$(this).attr('src').replace('aa845322_v1','ab391669'));
+$(this).attr('src',$(this).attr('src').replace('ab388512','ab286744_v1'));
+});
+
+var oldSrc = '//i.dell.com/sites/csimages/Banner_Imagery/all/227-networking-4-up-image-router-netgear-rbk50-orbi-a9217731-540x340.png';
+var newSrc = '//i.dell.com/sites/csimages/Banner_Imagery/all/cameras-4-up-logitech-540x340.png';
+$('img[src="' + oldSrc + '"]').attr('src', newSrc);
+ 
+ 2. $('.half-hero-outer-container img[alt="Networking"]').css("background-color","var(--purple)");
+
+ 3. (function(){
+
+		const items = {
+			  'ac-adapter-with-6-ft-power-cord': 59.99,
+			  'up-wireless-charging-stand': 43.99,
+			  'Belkin BOOST UP Wireless Charging Stand 10W - Black': 59.99,
+			   'Dell 54 WHr 4-CellPrimary Lithium-Ion Battery Customer Kit': 99.99
+			};
+
+		const prices = Object.values(items);
+		const sum = prices.reduce((sum, price) => sum + price);
+		alert("the total sum of product is $"+sum);
+
+		})();
+ 
+
+4. var test=$(".flex-viewport ul.slides li.flex-active-slide").length
+	if(test>=2)
+	{
+	$(".flex-viewport.slides ul").css("transform","none !important");
+	console.log("hide");
+	}
+	else{
+	console.log("show");
+	}

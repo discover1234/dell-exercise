@@ -1,0 +1,14 @@
+6. Exercise 1:
+Please write the code to change the order of the ANAV filter category (Shipping
+to second place and Form factor to first place and Processor at third place ) from
+the below URL
+https://www.dell.com/en-us/shop/desktop-computers/sr/desktops/xps-desktops?~ck=bt
+
+// Code to reorder the filter category start //
+$(".anavmfe__accordion__item").eq(0).attr("data-order",2);
+$(".anavmfe__accordion__item").eq(1).attr("data-order",1);
+//$(".anavmfe__accordion__item").parent();
+('.anavmfe__accordion__item').sort(function(a, b) {
+    return $(a).data('order') - $(b).data('order');
+  }).appendTo('.leftanav__option__box');
+ // Code to reorder the filter category end //

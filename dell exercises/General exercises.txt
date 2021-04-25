@@ -1,0 +1,34 @@
+ General Exercises:
+1. Assess your knowledge level on the following languages (1 = none; 5 = expert):
+o Vanilla JS- 3
+o jQuery- 3
+o HTML/HTML5- 3.5
+o CSS/CSS3-3.5
+o Ajax-3
+o AngularJS-1.5
+o Bootstrap3-3
+o Node JS-2
+
+
+2. What is the width of a container with 100px of width and 5px of padding?
+Width of the container is 110px
+
+3. How to apply a click event to all paragraphs except for the last?
+ $('p').not(':last').on('click',function(){
+   console.log("click event on all p element except last");
+ });
+
+
+4. Why does the alert show "Jack" first and then undefined?
+function identity() {
+ var name = 'Jack';
+ alert(name);
+ return
+ name
+};
+var who = identity();
+
+//Here the return statement inserts a semi-colon it considers as a new statement, it doesnot allow line terminator, so the execution stops there itself
+
+5. Are display: none; and visibility: hidden; are different? Explain.
+Basically both are used to hide the elements but the main difference is visibility hidden takes some extra space in web document and tag is available in html page but the display none property completely hides the elements and the tag is also no longer present in html page.
