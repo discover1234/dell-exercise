@@ -11,7 +11,7 @@ o Node JS-2
 
 
 2. What is the width of a container with 100px of width and 5px of padding?
-Width of the container is 110px
+Width of the container is 100px
 
 3. How to apply a click event to all paragraphs except for the last?
  $('p').not(':last').on('click',function(){
